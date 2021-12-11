@@ -16,38 +16,24 @@ $EndDescr
 $Comp
 L power:GND #PWR06
 U 1 1 5FD5664C
-P 2450 3450
-F 0 "#PWR06" H 2450 3200 50  0001 C CNN
-F 1 "GND" H 2455 3277 50  0000 C CNN
-F 2 "" H 2450 3450 50  0001 C CNN
-F 3 "" H 2450 3450 50  0001 C CNN
-	1    2450 3450
+P 1950 3500
+F 0 "#PWR06" H 1950 3250 50  0001 C CNN
+F 1 "GND" H 1955 3327 50  0000 C CNN
+F 2 "" H 1950 3500 50  0001 C CNN
+F 3 "" H 1950 3500 50  0001 C CNN
+	1    1950 3500
 	1    0    0    -1  
 $EndComp
-Wire Wire Line
-	1950 3050 1950 3250
-Wire Wire Line
-	2450 3100 2450 3250
-Connection ~ 1950 3250
-Wire Wire Line
-	1950 3250 1950 3450
-Connection ~ 2450 3250
-Wire Wire Line
-	2450 3250 2450 3450
-Wire Wire Line
-	1950 3250 2050 3250
-Wire Wire Line
-	2350 3250 2450 3250
 $Comp
 L Device:C C7
 U 1 1 5FD5666A
-P 2200 3250
-F 0 "C7" V 2050 3100 50  0000 L CNN
-F 1 "0.1u" V 2050 3250 50  0000 L CNN
-F 2 "Capacitor_SMD:C_0603_1608Metric" H 2238 3100 50  0001 C CNN
-F 3 "~" H 2200 3250 50  0001 C CNN
-	1    2200 3250
-	0    1    -1   0   
+P 1950 3250
+F 0 "C7" H 2050 3200 50  0000 L CNN
+F 1 "0.1u" H 2050 3300 50  0000 L CNN
+F 2 "Capacitor_SMD:C_0603_1608Metric" H 1988 3100 50  0001 C CNN
+F 3 "~" H 1950 3250 50  0001 C CNN
+	1    1950 3250
+	-1   0    0    1   
 $EndComp
 Wire Wire Line
 	7000 10150 7000 10100
@@ -190,7 +176,7 @@ Wire Wire Line
 Wire Wire Line
 	6100 7450 6100 7500
 Text Notes 950  7200 0    50   ~ 0
-NOTE: DECOUPLING CAPS\nFOR U? VDD1.8 PINS
+NOTE: DECOUPLING CAPS\nFOR U3 VDD1.8 PINS
 $Comp
 L power:GND #PWR024
 U 1 1 5FDD4D22
@@ -359,7 +345,7 @@ Connection ~ 1450 6600
 Wire Wire Line
 	1450 6600 1900 6600
 Text Notes 950  5900 0    50   ~ 0
-NOTE: DECOUPLING CAPS FOR U? VDD3.3 PINS
+NOTE: DECOUPLING CAPS FOR U3 VDD3.3 PINS
 NoConn ~ 6150 6950
 NoConn ~ 6150 6350
 NoConn ~ 6150 7050
@@ -452,7 +438,7 @@ Wire Wire Line
 Wire Wire Line
 	3200 7350 3200 7400
 Text Notes 2550 7200 0    50   ~ 0
-NOTE: DECOUPLING CAPS\nFOR U? VDDA1.8 PIN
+NOTE: DECOUPLING CAPS\nFOR U3 VDDA1.8 PIN
 $Comp
 L Device:R R3
 U 1 1 5FDD4DFA
@@ -554,10 +540,6 @@ F 3 "http://www.ti.com/lit/ds/symlink/tusb320.pdf" H 5250 1850 50  0001 C CNN
 	1    5250 1850
 	-1   0    0    -1  
 $EndComp
-Wire Wire Line
-	2250 3050 2250 3100
-Wire Wire Line
-	2250 3100 2450 3100
 $Comp
 L power:VBUS #PWR09
 U 1 1 6024C592
@@ -799,7 +781,7 @@ $EndComp
 Text Notes 5200 3450 0    50   ~ 0
 I2C ADDRESS SELECTION:\n  HIGH JUMPER: 0x61\n  LOW JUMPER: 0x60 (DEFAULT)\n
 Text Notes 7050 2400 0    50   ~ 0
-NOTE: DECOUPLING CAP\nFOR U? VDD PIN
+NOTE: DECOUPLING CAP\nFOR U1 VDD PIN
 Wire Wire Line
 	1000 9650 1000 9600
 Connection ~ 1000 9650
@@ -990,34 +972,12 @@ OUTPUT: 3.3V 500mA MAX
 Text Notes 11450 5150 0    79   ~ 0
 STM32H7\nMICROCONTROLLER
 $Comp
-L io-master-dev-board:CHASSIS #PWR05
-U 1 1 6166FC9A
-P 1950 3450
-F 0 "#PWR05" H 1950 3250 50  0001 C CNN
-F 1 "CHASSIS" H 1954 3296 50  0000 C CNN
-F 2 "" H 1950 3400 50  0001 C CNN
-F 3 "" H 1950 3400 50  0001 C CNN
-	1    1950 3450
-	1    0    0    -1  
-$EndComp
-$Comp
-L io-master-dev-board:CHASSIS #PWR04
-U 1 1 616708D0
-P 1000 9700
-F 0 "#PWR04" H 1000 9500 50  0001 C CNN
-F 1 "CHASSIS" H 1004 9546 50  0000 C CNN
-F 2 "" H 1000 9650 50  0001 C CNN
-F 3 "" H 1000 9650 50  0001 C CNN
-	1    1000 9700
-	1    0    0    -1  
-$EndComp
-$Comp
 L Connector_Generic:Conn_01x10 J8
 U 1 1 616874B9
 P 14600 1450
 F 0 "J8" H 14600 1950 50  0000 C CNN
 F 1 "Conn_01x10" H 14680 1351 50  0001 L CNN
-F 2 "io-master-dev-board:Edge_PinHeader_1x10_P2.54mm_Horizontal" H 14600 1450 50  0001 C CNN
+F 2 "Connector_PinHeader_1.27mm:PinHeader_1x10_P1.27mm_Vertical" H 14600 1450 50  0001 C CNN
 F 3 "~" H 14600 1450 50  0001 C CNN
 	1    14600 1450
 	1    0    0    -1  
@@ -1505,7 +1465,7 @@ U 1 1 603BA016
 P 14600 3850
 F 0 "J9" H 14600 5450 50  0000 C CNN
 F 1 "Conn_01x32" H 14680 3751 50  0001 L CNN
-F 2 "io-master-dev-board:Edge_PinHeader_1x32_P2.54mm_Horizontal" H 14600 3850 50  0001 C CNN
+F 2 "Connector_PinHeader_1.27mm:PinHeader_1x32_P1.27mm_Vertical" H 14600 3850 50  0001 C CNN
 F 3 "~" H 14600 3850 50  0001 C CNN
 	1    14600 3850
 	1    0    0    -1  
@@ -1544,7 +1504,7 @@ U 1 1 60690DB0
 P 14600 7150
 F 0 "J10" H 14600 8550 50  0000 C CNN
 F 1 "Conn_01x27" H 14680 7101 50  0001 L CNN
-F 2 "io-master-dev-board:Edge_PinHeader_1x27_P2.54mm_Horizontal" H 14600 7150 50  0001 C CNN
+F 2 "Connector_PinHeader_1.27mm:PinHeader_1x27_P1.27mm_Vertical" H 14600 7150 50  0001 C CNN
 F 3 "~" H 14600 7150 50  0001 C CNN
 	1    14600 7150
 	1    0    0    -1  
@@ -1811,17 +1771,6 @@ Wire Wire Line
 	14400 5950 14250 5950
 Wire Wire Line
 	13550 5850 13750 5850
-$Comp
-L Connector_Generic:Conn_02x32_Counter_Clockwise J6
-U 1 1 608EF63F
-P 13950 3850
-F 0 "J6" H 14000 5450 50  0000 C CNN
-F 1 "JUMPER" H 14000 2150 50  0000 C CNN
-F 2 "Connector_PinHeader_2.54mm:PinHeader_2x32_P2.54mm_Vertical" H 13950 3850 50  0001 C CNN
-F 3 "~" H 13950 3850 50  0001 C CNN
-	1    13950 3850
-	1    0    0    -1  
-$EndComp
 Wire Wire Line
 	14250 2350 14400 2350
 Wire Wire Line
@@ -1886,17 +1835,6 @@ Wire Wire Line
 	14250 2950 14400 2950
 Wire Wire Line
 	13750 2850 13550 2850
-$Comp
-L Connector_Generic:Conn_02x27_Counter_Clockwise J7
-U 1 1 608FFD5B
-P 13950 7150
-F 0 "J7" H 14000 8550 50  0000 C CNN
-F 1 "JUMPER" H 14000 5750 50  0000 C CNN
-F 2 "Connector_PinHeader_2.54mm:PinHeader_2x27_P2.54mm_Vertical" H 13950 7150 50  0001 C CNN
-F 3 "~" H 13950 7150 50  0001 C CNN
-	1    13950 7150
-	1    0    0    -1  
-$EndComp
 Wire Wire Line
 	14250 5850 14400 5850
 Wire Wire Line
@@ -2069,4 +2007,48 @@ Text Label 13650 1650 0    50   ~ 0
 I2C_SDA
 Text Label 13650 1750 0    50   ~ 0
 I2C_SCL
+$Comp
+L power:GND #PWR0101
+U 1 1 5FD88D31
+P 1000 9700
+F 0 "#PWR0101" H 1000 9450 50  0001 C CNN
+F 1 "GND" H 1005 9527 50  0000 C CNN
+F 2 "" H 1000 9700 50  0001 C CNN
+F 3 "" H 1000 9700 50  0001 C CNN
+	1    1000 9700
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	1950 3050 1950 3100
+Wire Wire Line
+	1950 3500 1950 3450
+Wire Wire Line
+	2250 3450 1950 3450
+Connection ~ 1950 3450
+Wire Wire Line
+	1950 3450 1950 3400
+Wire Wire Line
+	2250 3050 2250 3450
+$Comp
+L Connector_Generic:Conn_02x32_Odd_Even J6
+U 1 1 5FE52FA7
+P 13950 3850
+F 0 "J6" H 14000 5450 50  0000 C CNN
+F 1 "Conn_02x32_Odd_Even" H 14000 5476 50  0001 C CNN
+F 2 "Connector_PinHeader_1.27mm:PinHeader_2x32_P1.27mm_Vertical" H 13950 3850 50  0001 C CNN
+F 3 "~" H 13950 3850 50  0001 C CNN
+	1    13950 3850
+	1    0    0    -1  
+$EndComp
+$Comp
+L Connector_Generic:Conn_02x27_Odd_Even J7
+U 1 1 5FE5FFF1
+P 13950 7150
+F 0 "J7" H 14000 8550 50  0000 C CNN
+F 1 "Conn_02x27_Odd_Even" H 14000 8576 50  0001 C CNN
+F 2 "Connector_PinHeader_1.27mm:PinHeader_2x27_P1.27mm_Vertical" H 13950 7150 50  0001 C CNN
+F 3 "~" H 13950 7150 50  0001 C CNN
+	1    13950 7150
+	1    0    0    -1  
+$EndComp
 $EndSCHEMATC
